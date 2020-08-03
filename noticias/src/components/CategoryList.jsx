@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class CategoryLists extends Component {
+export default class CategoryList extends Component {
     render(){
         const {categories} = this.props 
         return(

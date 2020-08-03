@@ -19,7 +19,6 @@ export default function reducer (state = initialState, action){
                 ...state,
                 data: [...state.data, action.payload] // Esto lo que hace es crear una copia del arreglo, pero le va a agregar lo que venga dentro de payload
             }
-    
         default:
             return state
     }
