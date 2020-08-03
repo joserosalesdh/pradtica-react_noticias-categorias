@@ -1,6 +1,7 @@
 const ADD_CATEGORY ='category/add'
+const SELECT_CATEGORY ='category/select'
 
-const addCategory = payload => ({
+export const addCategory = payload => ({
     type: ADD_CATEGORY,
     payload:{
         ...payload, 
@@ -9,8 +10,14 @@ const addCategory = payload => ({
 })
 
 const initialState = {
-    data: [{id: 1, name: 'Defecto'}]
+    data: [{id: 1, name: 'Defecto'}],
+    selected: 1
 }
+
+export const selectCategory = payload => ({
+    type: SELECT_CATEGORY,
+    payload
+})
 
 export default function reducer (state = initialState, action){
     switch (action.type) {
@@ -18,6 +25,11 @@ export default function reducer (state = initialState, action){
             return{
                 ...state,
                 data: [...state.data, action.payload] // Esto lo que hace es crear una copia del arreglo, pero le va a agregar lo que venga dentro de payload
+            }
+            case SELECT_CATEGORY:
+            return{
+                ...state,
+                selected: action.payload // selected indica cual es la categoria seleccionada 
             }
         default:
             return state

@@ -1,6 +1,6 @@
 const ADD_NEWS ='news/add'
 
-const addNews = payload => ({
+export const addNews = payload => ({
     type: ADD_NEWS,
     payload:{
         ...payload, 

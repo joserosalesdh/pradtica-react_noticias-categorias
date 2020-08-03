@@ -13,5 +13,5 @@ class NewsForm extends Component {
 }
 
 export default reduxForm({
-    form: 'News', 
+    form: 'news', 
 })(NewsForm)
